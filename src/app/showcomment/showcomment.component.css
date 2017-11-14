@@ -1,0 +1,10 @@
+::-webkit-scrollbar {
+  display: none;
+}
+div.collapsed {
+  overflow: hidden;
+}
+a.readmore{
+  font-weight: bold;,
+color: black;
+}

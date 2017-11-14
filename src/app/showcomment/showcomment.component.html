@@ -1,0 +1,13 @@
+<div *ngFor="let comment of Comments">
+<div class="row w-100" [ngClass]="{'ml-5': comment.parent !== null}">
+  <div class="col-1 pr-0"><img class="rounded-circle img-fluid" src='{{comment.author.profileImage}}'></div>
+  <div class="d-flex align-items-start flex-column pl-0 ml-0 col-11">
+    <div class="p-0 ml-0"><strong>{{comment.author.name}} </strong> <small> {{comment.updatedAt | timeAgo}} </small></div>
+    <app-read-more [text]="comment.text" [maxHeight]="50"></app-read-more>
+    <div class="row p-0 ml-0"
+         (click)="toggleCollapse(comment)"
+         *ngIf="comment.children" ><mat-icon color="primary">expand_more</mat-icon><p> View More Replies</p></div>
+  </div>
+</div>
+  <app-showcomment class="collapse show"  [@collapse]="comment.collapse" *ngIf="comment.children" [Comments]="comment.children"></app-showcomment>
+</div>

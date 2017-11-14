@@ -1,0 +1,66 @@
+
+/*Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575px) {
+  p.videotitle {
+  font-size: 12px;
+  }
+}
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) and (max-width: 767px) {
+  p.videotitle {
+    font-size: 16px;
+  }
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991px) {
+  p.videotitle {
+  font-size: 20px;
+  }
+}
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) and (max-width: 1199px) {
+  p.videotitle {
+    font-size: 28px;
+  }
+}
+
+/*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+  p.videotitle {
+    font-size: 28px;
+  }
+}
+
+.autocomplete-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+::-webkit-scrollbar{
+  width:5px;
+}
+.container-fluid{
+  background-color:#fafafa;
+  text-align:center;
+}
+
+.videoRowList:hover {
+  color: lightslategray;
+  border: 2px solid red;
+  border-radius: 12px;
+}
+
+
+.scrollOverView{
+  height: 100vh;
+  overflow-x:hidden;
+  overflow-y: scroll;
+}
+
+.YoutubeText{
+  font-family: 'Shadows Into Light', cursive;
+}

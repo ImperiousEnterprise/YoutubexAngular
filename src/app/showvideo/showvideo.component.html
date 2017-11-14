@@ -1,0 +1,9 @@
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe *ngIf="trustedUrl" class="embed-responsive-item e2e-iframe-trusted-src" [src]="trustedUrl"></iframe>
+</div>
+<br>
+<div *ngIf="VideoComments">
+  <app-showcomment [Comments]="VideoComments['comments']"></app-showcomment>
+</div>
+
+

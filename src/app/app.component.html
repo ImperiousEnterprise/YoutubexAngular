@@ -1,0 +1,44 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+<div class="container-fluid" (window:resize)="onResize($event)">
+  <div class="row col-12">
+    <h5 class="col-4 YoutubeText mt-4 "> <mat-icon class="material-icons">video_library</mat-icon> YoutubeXAngular5</h5>
+    <mat-form-field  class="col-8 autocomplete-form" *ngIf='searchTitles'>
+      <input type="text" (keyup)="autoCompleteSearchs($event)" matInput [formControl]="myControl" [matAutocomplete]="auto">
+      <mat-autocomplete  #auto="matAutocomplete">
+        <mat-option *ngFor="let option of searchTitles" [value]="option" (onSelectionChange)="selectVideoList(option)">
+          {{ option}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </div>
+  <div class="d-flex flex-lg-row flex-xl-row flex-md-row">
+    <div
+         infiniteScroll
+         [infiniteScrollDistance]="1"
+         [infiniteScrollThrottle]="50"
+         [scrollWindow]="false"
+         (scrolled)="onScrollDown()"
+         *ngIf='result' class="col col-lg-6 col-md-6 col-sm-6 col-xl-6 scrollOverView">
+      <div class="row col-12 videoRowList mb-2" *ngFor="let res of result['items']" (click)="vidId = res?.id">
+        <div class="col-4 pr-0">
+          <img class="img-fluid" src="{{res?.pic['default'].url}}">
+        </div>
+        <div class="col-8 pl-0">
+          <p class="videotitle">{{ res?.title }}</p>
+        </div>
+      </div>
+    </div>
+    <div infiniteScroll
+         [infiniteScrollDistance]="1"
+         [infiniteScrollThrottle]="50"
+         [scrollWindow]="false"
+         (scrolled)="onScrollLoadComments()"
+         class="col col-lg-6 col-md-6 col-sm-6 col-xl-6 scrollOverView">
+      <app-showvideo #childComponent *ngIf="vidId" [videoId]="vidId"></app-showvideo>
+    </div>
+  </div>
+</div>
+
+
