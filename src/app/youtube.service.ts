@@ -4,13 +4,14 @@ import {HttpClient, HttpErrorResponse, HttpParams} from '@angular/common/http';
 import {Item, Pic, YoutubeSearchObject} from './models/youtube-search-object';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
+import {environment} from '../environments/environment.prod';
 import {Comment, Author, YoutubeCommentObject} from './models/youtube-comment-object';
 
 @Injectable()
 export class YoutubeService {
   private search_path = 'https://www.googleapis.com/youtube/v3/search';
   private comment_path = 'https://www.googleapis.com/youtube/v3/commentThreads';
-  private apikey = 'AIzaSyCsEfzwW_Y2LBgEdKnJ9QSZZPXxYEcD31g';
+  private apikey = environment.youtubeKey;
   public result: YoutubeSearchObject;
   public commentThread: YoutubeCommentObject;
   constructor(private http: HttpClient) {  }

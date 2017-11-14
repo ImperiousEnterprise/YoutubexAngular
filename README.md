@@ -1,6 +1,8 @@
-# TestProject
+# YoutubeXAngular5
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.1.
+The point of this project is to demonstrate the use of Angular 5 and Angular Materials in pulling
+data from the youtube api.
 
 ## Development server
 
