@@ -4,6 +4,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 The point of this project is to demonstrate the use of Angular 5 and Angular Materials in pulling
 data from the youtube api.
 
+[Live Demo](https://imperiousenterprise.github.io/YoutubexAngular/)
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
